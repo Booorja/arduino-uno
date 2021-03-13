@@ -1,0 +1,32 @@
+//Arduino nano
+ 
+int LED = 13;
+
+char mensaje;
+
+void setup() {
+  
+
+  Serial.begin(9600); 
+  pinMode(LED, OUTPUT);
+
+  
+}
+
+void loop() {
+  
+  if(Serial.available())
+  {
+    mensaje = Serial.read();
+    if(mensaje == "1")
+    {
+      digitalWrite(LED,HIGH);
+    }
+    else if(mensaje == "2")
+    {
+      digitalWrite(LED, LOW);
+    }
+  }
+  
+}
+ 
