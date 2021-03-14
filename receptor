@@ -1,6 +1,6 @@
 //Arduino nano
  
-int LED = 13;
+int LED = 10;
 
 char mensaje;
 
@@ -18,15 +18,14 @@ void loop() {
   if(Serial.available())
   {
     mensaje = Serial.read();
-    if(mensaje == "1")
+    if(mensaje == 'A')
     {
       digitalWrite(LED,HIGH);
     }
-    else if(mensaje == "2")
+    else if(mensaje == 'B')
     {
       digitalWrite(LED, LOW);
     }
   }
   
 }
- 
