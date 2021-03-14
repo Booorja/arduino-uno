@@ -1,15 +1,17 @@
-// Arduino uno
-
+//ARDUINO UNO
 int pulsador = 10;
 int estado;
 int estadoanterior;
 int salida=0;
+//int LED=8; LAS LINEAS COMENTADAS ERAN PARA COMPROBAR QUE EL CODIGO FUNCIONABA SI SOLO USABA EL ARDUINO UNO.
 
 void setup() {
 
 
   Serial.begin(9600); 
-  pinMode(pulsador, INPUT); 
+  pinMode(pulsador, INPUT);
+ // pinMode(LED,OUTPUT); 
+  estadoanterior=0;
    
 
 }
@@ -24,11 +26,12 @@ void loop() {
   }
   estadoanterior=estado;
   if (salida==1){
-    Serial.write("1");
+    Serial.write('A');
+    //digitalWrite(LED,HIGH); 
   }
-  else 
-  {
-    Serial.write("2");
+  else { 
+  Serial.write('B');
+    //digitalWrite(LED,LOW);
   }
   
 }
